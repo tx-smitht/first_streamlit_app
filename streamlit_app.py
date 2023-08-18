@@ -34,7 +34,7 @@ fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 # Show the normalized json
 st.dataframe(fruityvice_normalized)
 
-st.code('{
+code = '''{
   "2\" GPM": {
     "N": "4.38801615"
   },
@@ -68,4 +68,6 @@ st.code('{
   "timestamp": {
     "N": "1692191353"
   }
-}', language='json')
+} '''
+
+st.code(code, language='json')
