@@ -33,3 +33,39 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_c
 fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 # Show the normalized json
 st.dataframe(fruityvice_normalized)
+
+st.code('{
+  "2\" GPM": {
+    "N": "4.38801615"
+  },
+  "2\" Minutes of Flow": {
+    "N": "12.333333333333334"
+  },
+  "3/4\" GPM": {
+    "N": "0"
+  },
+  "3/4\" Minutes of Flow": {
+    "N": "0"
+  },
+  "Current State 1": {
+    "N": "0"
+  },
+  "Current State 2": {
+    "N": "1"
+  },
+  "Inlet Pressure": {
+    "N": "68.450148"
+  },
+  "Outlet Pressure": {
+    "N": "65.227448"
+  },
+  "multivariate_v2_prediction": {
+    "N": "5.4966981451"
+  },
+  "retraining_model_prediction": {
+    "N": "2.1368063366"
+  },
+  "timestamp": {
+    "N": "1692191353"
+  }
+}, language='json')
