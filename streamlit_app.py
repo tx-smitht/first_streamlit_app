@@ -104,4 +104,4 @@ for column in col_list:
 df_clean_table = df_table.select(column_selection_statements).order_by('TIMES',ascending=False)
 df_clean_table.show(10)'''
 
-st.code(code, language='python')
+st.code(code2, language='python')
