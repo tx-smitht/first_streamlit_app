@@ -76,3 +76,32 @@ code = '''{
 } '''
 
 st.code(code, language='json')
+
+
+snowpark_code = ''' 
+# Load the data from the NEPTUNE_DATA_RAW table
+df_table = session.table('NEPTUNE_DATA_RAW')
+
+# Print off 1 record
+df_table.select(col('raw_data')['Item']).show(1)
+
+# Say which elements we want as columns. Put in list to be iterated through
+col_list = ['2\" GPM','timestamp', '2\" Minutes of Flow', '3/4\" Minutes of Flow', '3/4\" GPM', 'Inlet Pressure', 'Outlet Pressure',
+            'Current State 1', 'Current State 2', 'baseline_prediction','multivariate_v2_prediction','retraining_model_prediction']
+
+# List that will hold the column selection statements
+column_selection_statements = []
+
+# Build column selection statements
+for column in col_list:
+    if column == 'timestamp':
+        column_selection_statements.append(col("raw_data")['Item'][column]['N'].cast(IntegerType()).alias(column[0:5]))
+    else:
+        column_selection_statements.append(col("raw_data")['Item'][column]['N'].cast(FloatType()).alias(column[0:5]))
+
+
+# Query using the column selection statements
+df_clean_table = df_table.select(column_selection_statements).order_by('TIMES',ascending=False)
+df_clean_table.show(10)'''
+
+st.code(code, language='python')
