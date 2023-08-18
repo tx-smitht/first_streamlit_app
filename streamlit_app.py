@@ -35,16 +35,16 @@ fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 st.dataframe(fruityvice_normalized)
 
 code = '''{
-  "2\" GPM": {
+  "2\\" GPM": {
     "N": "4.38801615"
   },
-  "2\" Minutes of Flow": {
+  "2\\" Minutes of Flow": {
     "N": "12.333333333333334"
   },
-  "3/4\" GPM": {
+  "3/4\\" GPM": {
     "N": "0"
   },
-  "3/4\" Minutes of Flow": {
+  "3/4\\" Minutes of Flow": {
     "N": "0"
   },
   "Current State 1": {
