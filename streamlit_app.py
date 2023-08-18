@@ -34,6 +34,11 @@ fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 # Show the normalized json
 st.dataframe(fruityvice_normalized)
 
+
+
+# new section
+st.header("Code for Joel")
+
 code = '''{
   "2\\" GPM": {
     "N": "4.38801615"
