@@ -1,4 +1,3 @@
-import snowflake.connector
 import streamlit as st
 import pandas as pd
 
@@ -35,7 +34,7 @@ fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 # Show the normalized json
 st.dataframe(fruityvice_normalized)
 
-
+import snowflake.connector
 
 # new section
 st.header("Code ")
