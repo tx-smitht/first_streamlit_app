@@ -42,7 +42,7 @@ my_data_rows = my_cur.fetchall()
 st.header("The fruit list contains:")
 st.dataframe(my_data_rows)
 
-fruit_to_add = st.text_input('What fruit would you like to add?', 'Jackfruit')
+fruit_to_add = st.text_input('What fruit would you like to add?')
 my_cur.execute('insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values ("' + fruit_to_add + '");')
 st.write(f"Thank you for adding {fruit_to_add}")
 # new section
