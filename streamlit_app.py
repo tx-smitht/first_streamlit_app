@@ -53,6 +53,7 @@ if st.button("Get fruit load list"):
     my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
     my_data_rows = get_fruit_load_list()
     st.header("The fruit list contains:")
+    my_cnx.close()
     st.dataframe(my_data_rows)
 
 
