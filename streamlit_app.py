@@ -42,6 +42,9 @@ my_data_rows = my_cur.fetchall()
 st.header("The fruit list contains:")
 st.dataframe(my_data_rows)
 
+fruit_to_add = st.text_input('What fruit would you like to add?', 'Jackfruit')
+my_cur.execute(f"insert into fruit_load_list values ({fruit_to_add})")
+
 # new section
 st.header("Code ")
 
