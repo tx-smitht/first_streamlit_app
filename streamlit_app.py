@@ -55,7 +55,6 @@ if st.button("Get fruit load list"):
     st.header("The fruit list contains:")
     st.dataframe(my_data_rows)
 
-st.stop()
 
 def insert_row_snowflake(new_fruit):
   with my_cnx.cursor() as my_cur:
