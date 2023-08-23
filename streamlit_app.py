@@ -57,10 +57,19 @@ if st.button("Get fruit load list"):
 
 st.stop()
 
-fruit_to_add = st.text_input('What fruit would you like to add?')
-my_cur.execute("insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values ('from streamlit')")
-#("' + fruit_to_add + '");')
-st.write(f"Thank you for adding {fruit_to_add}")
+def insert_row_snowflake(new_fruit):
+  with my_cnx.cursor() as my_cur:
+    my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+    return "Thanks for adding " + new_fruit
+
+add_my_fruit = st.text_input('What fruit would you like to add?')
+if st.button('Add fruit to the list'):
+  my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
+  back_from_function = insert_row_snowflake(add_my_fruit)
+
+
+
+
 # new section
 st.header("Code ")
 
