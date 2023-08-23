@@ -38,7 +38,7 @@ st.dataframe(fruityvice_normalized)
 
 
 # new section
-st.header("Code for Joel")
+st.header("Code ")
 
 code = '''{
   "2\\" GPM": {
